@@ -6,23 +6,18 @@ on:
 
 jobs:
     deploy:
-        name: Deploy Application
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout Repo
-              uses: actions/checkout@master
-            - name: Create Node Environment
-              uses: actions/setup-node@v2
-              with:
-                node-version: '12'
-            - name: Install Packages and Build Application
-              run: |
-                npm install
-                npm run build
-            - name: Deploy
-              uses: s0/git-publish-subdir-action@develop
-              env:
-                REPO: self
-                BRANCH: main
-                FOLDER: dist
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      name: Deploying App
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checkout Repo
+          - uses: actions/checkout@v2
+          - name: Create Node Environment
+          - uses: actions/setup-node@v2
+            with:
+              node-version: '12'
+          - name: Install packages
+            run: npm i
+          - name: Set Creds
+            run: git config user.name "pndrckr" && git config user.email "pndrckr@mail"
+          - name: Deploy
+            run: npm run deploy
