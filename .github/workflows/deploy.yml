@@ -17,7 +17,7 @@ jobs:
                 node-version: 10.x
             - name: Install Packages and Build Application
               run: |
-                npm install -g @vue/cli
+                npm init vue@latest
                 npm install
                 npm run build
             - name: Deploy
