@@ -9,7 +9,8 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-     <h1  v-html="$t('ejemplo')"></h1>  
+     <h1  v-html="$t('ejemplo')"></h1> 
+     <p>FTP</p>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
