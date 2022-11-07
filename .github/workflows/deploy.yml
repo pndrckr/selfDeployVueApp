@@ -14,10 +14,10 @@ jobs:
           - name: Create Node Environment
           - uses: actions/setup-node@v2
             with:
-              node-version: '12'
+                node-version: '12'
           - name: Install packages
             run: npm i
           - name: Set Creds
             run: git config user.name "pndrckr" && git config user.email "pndrckr@mail"
-          - name: Deploy
+          - name: Deploy...
             run: npm run deploy
