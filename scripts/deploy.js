@@ -3,7 +3,7 @@ import {execa} from 'execa';
 import fs from "fs";
 
 (async () => {
-const branch = 'build'
+const branch = 'main'
     try {
     // await execa("git", ["checkout", "--orphan", "gh-pages"]);
     await execa("git", ["checkout", "--orphan", branch]);
@@ -19,8 +19,8 @@ const branch = 'build'
     console.log("Pushing to "+branch+"...");
     await execa("git", ["push", "origin", `HEAD:${branch}`, "--force"]);
     await execa("rm", ["-r", folderName]);
-    await execa("git", ["checkout", "-f", "main"]);
-    await execa("git", ["branch", "-D", branch]);
+    await execa("git", ["checkout", "-f", "backend"]);
+    // await execa("git", ["branch", "-D", branch]);
     console.log("Successfully deployed, check your settings");
   } catch (e) {
     // eslint-disable-next-line no-console
