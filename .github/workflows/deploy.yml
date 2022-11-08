@@ -19,10 +19,3 @@ jobs:
             run: git config user.name "pndrckr" && git config user.email "pndrckr@mail"
           - name: Deploy...
             run: npm run deploy
-          - name: FTP-Deploy-Action
-            uses: SamKirkland/FTP-Deploy-Action@3.1.1
-            with:
-                ftp-server: ${{ secrets.FTP_SERVER }}
-                ftp-username: ${{ secrets.FTP_USER }}
-                ftp-password: ${{ secrets.FTP_PASSWORD }}
-                local-dir: './dist/'
