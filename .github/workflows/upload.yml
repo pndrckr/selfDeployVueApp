@@ -1,8 +1,8 @@
 name: FTP-Update
 on:
-   pull_request:
-    types:
-      - closed
+   push:
+    tags:
+      - '*'
 
 jobs:
     deploy:
