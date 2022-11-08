@@ -1,8 +1,7 @@
-name: FTP-Update
+name: FTP-Upload
 on:
    push:
     branches:
-      - main
       - build
 
 jobs:
