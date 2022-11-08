@@ -1,8 +1,6 @@
 name: FTP-Upload
 on:
-   push:
-    branches:
-      - build
+   workflow_dispatch:
 
 jobs:
     deploy:
@@ -18,4 +16,3 @@ jobs:
                 ftp-server: ${{ secrets.FTP_SERVER }}
                 ftp-username: ${{ secrets.FTP_USER }}
                 ftp-password: ${{ secrets.FTP_PASSWORD }}
-
