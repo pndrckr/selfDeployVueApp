@@ -1,8 +1,8 @@
 name: FTP-Update
 on:
-    push:
-        branches:
-            - build
+   pull_request:
+    types:
+      - closed
 
 jobs:
     deploy:
