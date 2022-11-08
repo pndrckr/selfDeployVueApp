@@ -1,8 +1,9 @@
 name: FTP-Update
 on:
    push:
-    tags:
-      - '*'
+    branches:
+      - main
+      - build
 
 jobs:
     deploy:
