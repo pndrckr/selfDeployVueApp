@@ -16,11 +16,12 @@ const branch = 'build'
     const folderName = "dist";
     await execa("git", ["--work-tree", folderName, "add", "--all"]);
     // await execa("git", ["--work-tree", folderName, "commit", "-m", branch]);
+    await execa("git", ["--work-tree", folderName, "commit", "-m", "main"]);
     // console.log("Pushing to "+branch+"...");
     // await execa("git", ["push", "origin", `HEAD:${branch}`, "--force"]);
     await execa("git", ["push", "origin", "main", "--force"]);
     await execa("rm", ["-r", folderName]);
-    await execa("git", ["checkout", "-f", "main"]);
+    // await execa("git", ["checkout", "-f", "main"]);
     // await execa("git", ["branch", "-D", branch]);
     console.log("Successfully deployed, check your settings");
   } catch (e) {
